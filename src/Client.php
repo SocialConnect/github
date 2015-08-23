@@ -54,15 +54,16 @@ class Client extends \SocialConnect\Common\ClientAbstract
             $body = $response->getBody();
             if ($body) {
                 $json = json_decode($body);
-                if (isset($json->data)) {
-                    return $json->data;
-                } elseif (isset($json->meta)) {
-                    throw new \Exception($json->meta->error_message, $json->meta->code);
+
+                if (isset($json->message)) {
+                    throw new \Exception($json->message, $response->getStatusCode());
+                } elseif ($json) {
+                    return $json;
                 }
 
-                throw new \Exception($response);
+                throw new \Exception($response->getBody());
             } else {
-                throw new \Exception($response);
+                throw new \Exception($response->getBody());
             }
         }
         return false;
@@ -82,5 +83,18 @@ class Client extends \SocialConnect\Common\ClientAbstract
     public function setApiUri($apiUri)
     {
         $this->apiUri = $apiUri;
+    }
+
+    /**
+     * Get a single user
+     * @link https://developer.github.com/v3/users/#get-a-single-user
+     *
+     * @param $username
+     * @return bool|mixed
+     * @throws \Exception
+     */
+    public function getUser($username)
+    {
+        return $this->request('users/' . $username);
     }
 }
