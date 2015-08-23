@@ -34,11 +34,10 @@ class Client extends \SocialConnect\Common\ClientAbstract
     /**
      * @param string $uri
      * @param array $parameters
-     * @param bool|false $accessToken
      * @return bool|mixed
      * @throws \Exception
      */
-    public function request($uri, array $parameters = array(), $accessToken = false, $method = AbstractHttpClient::GET)
+    public function request($uri, array $parameters = array(), $method = AbstractHttpClient::GET)
     {
         $response = $this->httpClient->request($this->apiUri . $uri, $parameters, $method);
         if ($response) {
