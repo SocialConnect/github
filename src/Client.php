@@ -90,7 +90,7 @@ class Client extends \SocialConnect\Common\ClientAbstract
      *
      * @link https://developer.github.com/v3/users/#get-a-single-user
      *
-     * @param $username
+     * @param integer $username
      * @return Entity\User|bool false if it's not exists
      * @throws \Exception
      */
@@ -113,6 +113,8 @@ class Client extends \SocialConnect\Common\ClientAbstract
      * @link https://developer.github.com/v3/repos/#get
      *
      * @param $username
+     * @param string $owner
+     * @param string $repo
      * @return Entity\Repository|bool false if it's not exists
      * @throws \Exception
      */
