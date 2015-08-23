@@ -13,7 +13,11 @@ Available methods:
 
 ## Authentication
 
-This library is a Client, see OAuth provider in [socialconnect/auth](https://github.com/socialconnect/auth) project.
+This library is a Client only,
+
+see OAuth provider in [socialconnect/auth](https://github.com/socialconnect/auth) project.
+
+see Github WebHook Service in [ovr/github-webhook-service](https://github.com/ovr/github-webhook-service) project.
 
 ## Installation
 
