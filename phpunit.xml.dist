@@ -1,0 +1,38 @@
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="./tests/Bootstrap.php"
+        >
+    <testsuites>
+        <testsuite name="Instagram Test Case">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>./tests/</directory>
+        </whitelist>
+        <blacklist>
+            <directory>./vendor/</directory>
+            <file>./vendor/autoload.php</file>
+        </blacklist>
+    </filter>
+
+    <php>
+        <env name="applicationId" value="5d1357e83ce4497284e90274b9ff083e"/>
+        <!--<env name="applicationSecret" value="" />-->
+        <env name="testUserId" value="715473058" />
+        <!--<env name="testUserAccessToken" value="" />-->
+    </php>
+
+    <logging>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
+    </logging>
+</phpunit>

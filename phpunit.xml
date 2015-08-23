@@ -1,0 +1,38 @@
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="true"
+         stopOnFailure="false"
+         syntaxCheck="true"
+         bootstrap="./tests/Bootstrap.php"
+        >
+    <testsuites>
+        <testsuite name="Vk Test Case">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>./tests/</directory>
+        </whitelist>
+        <blacklist>
+            <directory>./vendor/</directory>
+            <file>./vendor/autoload.php</file>
+        </blacklist>
+    </filter>
+
+    <php>
+        <env name="applicationId" value="ad325fb110b8488da381d575fd1e315f"/>
+        <env name="applicationSecret" value="23c41c2e3e464185a4cb89b6e9668271" />
+        <env name="testUserId" value="715473058" />
+        <env name="testUserAccessToken" value="715473058.ad325fb.29ae0fb8a92c4ee2bf178d65a9f5d575" />
+    </php>
+
+    <logging>
+        <log type="coverage-text" target="php://stdout" showUncoveredFiles="true"/>
+    </logging>
+</phpunit>
