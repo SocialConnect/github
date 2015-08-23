@@ -5,25 +5,15 @@
 [![Latest Stable Version](https://poser.pugx.org/socialconnect/instagram/v/stable.svg)](https://packagist.org/packages/socialconnect/instagram)
 [![License](https://poser.pugx.org/SocialConnect/instagram/license.svg)](https://packagist.org/packages/socialconnect/instagram)
 
-> Awesome SDK to work with [Instagram API](http://instagram.com/developer/)
+> Awesome SDK to work with [GitHub](https://developer.github.com/)
 
 Available methods:
 
-- [X] searchUser
-- [X] getUser
-- [X] getUserFeed
-- [X] getUserMediaRecent
-- [X] getUserMediaLiked
-- [X] getMediaLikes
-- [X] removeMediaLike
-- [X] getUserFollows
-- [X] getUserFollowedBy
-- [X] getMedia
-- [X] getMediaPopular
+@todo
 
 ## Authentication
 
-This library is SDK, see OAuth provider in [socialconnect/auth](https://github.com/socialconnect/auth) project.
+This library is a Client, see OAuth provider in [socialconnect/auth](https://github.com/socialconnect/auth) project.
 
 ## Installation
 
@@ -53,7 +43,7 @@ First you need to create service:
 $appId = 'appId';
 $appSecret = 'secret';
 
-$instagramClient = new \SocialConnect\Instagram\Client($appId, $appSecret);
+$instagramClient = new \SocialConnect\GitHub\Client($appId, $appSecret);
 $instagramClient->setHttpClient(new \SocialConnect\Common\Http\Client\Curl());
 ```
 
@@ -63,14 +53,6 @@ $instagramClient->setHttpClient(new \SocialConnect\Common\Http\Client\Curl());
 $instagramClient = $instagramClient->getUser(715473058);
 var_dump($user);
 ```
-
-## Get self information:
-
-```php
-$instagramClient = $instagramClient->getUser();
-var_dump($user);
-```
-
 
 ## Customs methods
 
