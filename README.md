@@ -9,13 +9,13 @@
 
 Available methods:
 
-| API   | Methods                                                                            | Documentation | Specification tests |
-|-------|------------------------------------------------------------------------------------|---------------|---------------------|
-| Users |                                                                                    | [ ]           | [ ]                 |
-|       | [getUser](https://developer.github.com/v3/users/#get-a-single-user)                | [x]           | [x]                 |
-|       | [getSelf](https://developer.github.com/v3/users/#get-the-authenticated-user)       | [ ]           | [ ]                 |
-|       | [updateUser](https://developer.github.com/v3/users/#update-the-authenticated-user) | [ ]           | [ ]                 |
-|       | [getUsers](https://developer.github.com/v3/users/#get-all-users)                   | [ ]           | [ ]                 |
+| API   | Methods                                                                            | Documentation      | Specification tests |
+|-------|------------------------------------------------------------------------------------|--------------------|---------------------|
+| Users |                                                                                    | 1/4 :x:            |                     |
+|       | [getUser](https://developer.github.com/v3/users/#get-a-single-user)                | :heavy_check_mark: | :heavy_check_mark:  |
+|       | [getSelf](https://developer.github.com/v3/users/#get-the-authenticated-user)       | :x:                | :x:                 |
+|       | [updateUser](https://developer.github.com/v3/users/#update-the-authenticated-user) | :x:                | :x:                 |
+|       | [getUsers](https://developer.github.com/v3/users/#get-all-users)                   | :x:                | :x:                 |
 
 ## Authentication
 
