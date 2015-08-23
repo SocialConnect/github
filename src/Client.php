@@ -87,6 +87,7 @@ class Client extends \SocialConnect\Common\ClientAbstract
 
     /**
      * Get a single user
+     *
      * @link https://developer.github.com/v3/users/#get-a-single-user
      *
      * @param $username
@@ -100,6 +101,28 @@ class Client extends \SocialConnect\Common\ClientAbstract
 
             $hydrator = new \SocialConnect\Common\Hydrator\ObjectMap(array());
             return $hydrator->hydrate(new Entity\User(), $result);
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
+
+    /**
+     * Get a single repository
+     *
+     * @link https://developer.github.com/v3/repos/#get
+     *
+     * @param $username
+     * @return Entity\Repository|bool false if it's not exists
+     * @throws \Exception
+     */
+    public function getRepository($owner, $repo)
+    {
+        try {
+            $result = $this->request('repos/' . $owner . '/' . $repo);
+
+            $hydrator = new \SocialConnect\Common\Hydrator\ObjectMap(array());
+            return $hydrator->hydrate(new Entity\Repository(), $result);
         } catch (\Exception $e) {
             return false;
         }

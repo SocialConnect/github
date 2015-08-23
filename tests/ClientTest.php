@@ -14,6 +14,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     const USER_ENTITY_CLASS = 'SocialConnect\GitHub\Entity\User';
 
+    const REPOSITORY_ENTITY_CLASS = 'SocialConnect\GitHub\Entity\Repository';
+
     /**
      * @return Client
      */
@@ -63,5 +65,16 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $client->setAccessToken($this->getAccessToken());
 
         $this->assertInstanceOf(self::USER_ENTITY_CLASS, $client->getUser($this->getDemoUserName()));
+    }
+
+    public function testGetUserRepository()
+    {
+        $client = $this->getClient();
+        $client->setAccessToken($this->getAccessToken());
+
+        $this->assertInstanceOf(
+            self::REPOSITORY_ENTITY_CLASS,
+            $client->getRepository('socialconnect', 'github')
+        );
     }
 }
