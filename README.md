@@ -22,7 +22,7 @@ Add a requirement to your `composer.json`:
 ```json
 {
     "require": {
-        "socialconnect/instagram": "~0.1"
+        "socialconnect/github": "~0.1"
     }
 }
 ```
@@ -39,18 +39,18 @@ How to use
 First you need to create service:
 
 ```php
-// Your Instagram Application's settings
+// Your GitHub Application's settings
 $appId = 'appId';
 $appSecret = 'secret';
 
-$instagramClient = new \SocialConnect\GitHub\Client($appId, $appSecret);
-$instagramClient->setHttpClient(new \SocialConnect\Common\Http\Client\Curl());
+$ghClient = new \SocialConnect\GitHub\Client($appId, $appSecret);
+$ghClient->setHttpClient(new \SocialConnect\Common\Http\Client\Curl());
 ```
 
 ## Get user with specified $id:
 
 ```php
-$instagramClient = $instagramClient->getUser(715473058);
+$ghClient = $ghClient->getUser('ovr');
 var_dump($user);
 ```
 
@@ -58,7 +58,7 @@ var_dump($user);
 
 ```php
 $parameters = [];
-$result = $instagramClient->request('method/CustomMethod', $parameters);
+$result = $ghClient->request('method/CustomMethod', $parameters);
 if ($result) {
     var_dump($result);
 }
@@ -67,18 +67,18 @@ if ($result) {
 ## Custom entities
 
 ```php
-class MyUserEntitiy extends \SocialConnect\Instagram\Entity\User {
+class MyUserEntitiy extends \SocialConnect\GitHub\Entity\User {
     public function myOwnMethod()
     {
         //do something
     }
 }
 
-$instagramClient->getEntityUser(new MyUserEntitiy());
-$user = $instagramClient->getUser(1);
+$ghClient->getEntityUser(new MyUserEntitiy());
+$user = $ghClient->getUser(1);
 
 if ($user) {
-    $instagramClient->myOwnMethod();
+    $ghClient->myOwnMethod();
 }
 ```
 
