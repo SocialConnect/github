@@ -1,7 +1,7 @@
 # <img src="https://socialconnect.github.io/assets/icons/mark-github.svg" width="27"> GitHub SDK
 [![Build Status](https://travis-ci.org/SocialConnect/github.svg)](https://travis-ci.org/SocialConnect/github)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SocialConnect/common/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SocialConnect/common/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/SocialConnect/common/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/SocialConnect/common/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SocialConnect/github/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SocialConnect/github/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/SocialConnect/github/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/SocialConnect/github/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/socialconnect/github/v/stable.svg)](https://packagist.org/packages/socialconnect/github)
 [![License](https://poser.pugx.org/SocialConnect/github/license.svg)](https://packagist.org/packages/socialconnect/github)
 
