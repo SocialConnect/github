@@ -3,7 +3,7 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/SocialConnect/common/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/SocialConnect/common/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/SocialConnect/common/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/SocialConnect/common/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/socialconnect/github/v/stable.svg)](https://packagist.org/packages/socialconnect/github)
-[![License](https://poser.pugx.org/SocialConnect/instagram/github.svg)](https://packagist.org/packages/socialconnect/github)
+[![License](https://poser.pugx.org/SocialConnect/github/license.svg)](https://packagist.org/packages/socialconnect/github)
 
 > Awesome SDK to work with [GitHub](https://developer.github.com/)
 
