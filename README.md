@@ -9,15 +9,13 @@
 
 Available methods:
 
-API | Methods | Documentation | Specification tests
---- | ------- | ------------- | -------------------
-
-[Activity](https://developer.github.com/v3/activity/) | | [ ] | []
-[Users](https://developer.github.com/v3/users/) |   | [ ] | [ ]
-    | [getUser](https://developer.github.com/v3/users/#get-a-single-user) | [Х] | [Х]
-    | [getSelf](https://developer.github.com/v3/users/#get-the-authenticated-user) | [ ] | [ ]
-    | [updateUser](https://developer.github.com/v3/users/#update-the-authenticated-user) | [ ] | [ ]
-    | [getUsers](https://developer.github.com/v3/users/#get-all-users) | [ ] | [ ]
+| API   | Methods                                                                            | Documentation | Specification tests |
+|-------|------------------------------------------------------------------------------------|---------------|---------------------|
+| Users |                                                                                    | [ ]           | [ ]                 |
+|       | [getUser](https://developer.github.com/v3/users/#get-a-single-user)                | [X ]          | [ ]                 |
+|       | [getSelf](https://developer.github.com/v3/users/#get-the-authenticated-user)       | [ ]           | [ ]                 |
+|       | [updateUser](https://developer.github.com/v3/users/#update-the-authenticated-user) | [ ]           | [ ]                 |
+|       | [getUsers](https://developer.github.com/v3/users/#get-all-users)                   | [ ]           | [ ]                 |
 
 ## Authentication
 
