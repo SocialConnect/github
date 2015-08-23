@@ -90,11 +90,18 @@ class Client extends \SocialConnect\Common\ClientAbstract
      * @link https://developer.github.com/v3/users/#get-a-single-user
      *
      * @param $username
-     * @return bool|mixed
+     * @return Entity\User|bool false if it's not exists
      * @throws \Exception
      */
     public function getUser($username)
     {
-        return $this->request('users/' . $username);
+        try {
+            $result = $this->request('users/' . $username);
+
+            $hydrator = new \SocialConnect\Common\Hydrator\ObjectMap(array());
+            return $hydrator->hydrate(new Entity\User(), $result);
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 }
