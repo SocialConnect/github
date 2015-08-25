@@ -16,6 +16,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     const REPOSITORY_ENTITY_CLASS = 'SocialConnect\GitHub\Entity\Repository';
 
+    const COLLECTION_ENTITY_CLASS = 'SocialConnect\GitHub\Entity\Repository';
+
     /**
      * @return Client
      */
@@ -65,6 +67,33 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $client->setAccessToken($this->getAccessToken());
 
         $this->assertInstanceOf(self::USER_ENTITY_CLASS, $client->getUser($this->getDemoUserName()));
+    }
+
+    public function testGetUsers()
+    {
+        $client = $this->getClient();
+        $client->setAccessToken($this->getAccessToken());
+
+        $this->assertInternalType('array', $client->getUsers());
+        $this->assertCount(30, $client->getUsers());
+    }
+
+    public function testGetUsersWithSpecifiedSince()
+    {
+        $client = $this->getClient();
+        $client->setAccessToken($this->getAccessToken());
+
+        $this->assertInternalType('array', $client->getUsers(30));
+        $this->assertCount(30, $client->getUsers());
+    }
+
+    public function testGetUsersWithNegativeSince()
+    {
+        $client = $this->getClient();
+        $client->setAccessToken($this->getAccessToken());
+
+        $this->setExpectedException('InvalidArgumentException', '$since must be >= 0');
+        $client->getUsers(-1);
     }
 
     public function testGetUserRepository()
