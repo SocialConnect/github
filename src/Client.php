@@ -115,31 +115,26 @@ class Client extends \SocialConnect\Common\ClientAbstract
      */
     public function getUsers($since = 0)
     {
-        try {
-            if ($since < 0) {
-                throw new InvalidArgumentException('$since must be >= 0');
-            }
-
-            if ($since > 0) {
-                $result = $this->request('users', ['since' => $since]);
-            } else {
-                /**
-                 * 0 is a default parameter for $since and it's not neeeded to be passed for API
-                 */
-                $result = $this->request('users');
-            }
-
-            if ($result) {
-                return $result;
-                /**
-                 * @todo w8 collection(s) class and amazing hydrator
-                 */
-            }
-
-            return false;
-        } catch (\Exception $e) {
-            return false;
+        if ($since < 0) {
+            throw new InvalidArgumentException('$since must be >= 0');
         }
+
+        if ($since > 0) {
+            $result = $this->request('users', ['since' => $since]);
+        } else {
+            /**
+             * 0 is a default parameter for $since and it's not neeeded to be passed for API
+             */
+            $result = $this->request('users');
+        }
+
+        if ($result) {
+            /**
+             * @todo w8 collection(s) class and amazing hydrator
+             */
+        }
+
+        return $result;
     }
 
     /**

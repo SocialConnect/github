@@ -5,6 +5,7 @@
 
 namespace TestInstagram;
 
+use InvalidArgumentException;
 use SocialConnect\GitHub\Client;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
@@ -87,12 +88,13 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(30, $client->getUsers());
     }
 
+    /**
+     * @expectedException InvalidArgumentException
+     * @expectedExceptionMessage $since must be >= 0
+     */
     public function testGetUsersWithNegativeSince()
     {
         $client = $this->getClient();
-        $client->setAccessToken($this->getAccessToken());
-
-        $this->setExpectedException('InvalidArgumentException', '$since must be >= 0');
         $client->getUsers(-1);
     }
 
