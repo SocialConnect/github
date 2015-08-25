@@ -17,13 +17,13 @@ Available methods:
 |       | [updateUser](https://developer.github.com/v3/users/#update-the-authenticated-user) | :x:                | :x:                 |
 |       | [getUsers](https://developer.github.com/v3/users/#get-all-users)                   | :x:                | :x:                 |
 
-## Authentication
+## OAuth/WebHook
 
-This library is a Client only,
+This library is a Client only, see:
 
-see OAuth provider in [socialconnect/auth](https://github.com/socialconnect/auth) project.
+OAuth provider in [socialconnect/auth](https://github.com/socialconnect/auth) project.
 
-see Github WebHook Service in [ovr/github-webhook-service](https://github.com/ovr/github-webhook-service) project.
+Github WebHook Service in [ovr/github-webhook-service](https://github.com/ovr/github-webhook-service) project.
 
 ## Installation
 
