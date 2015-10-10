@@ -8,6 +8,7 @@ namespace SocialConnect\GitHub;
 
 use InvalidArgumentException;
 use SocialConnect\Common\Http\Client\Client as AbstractHttpClient;
+use SocialConnect\Common\Http\Response;
 use SocialConnect\Common\HttpClient;
 use SocialConnect\Common\Hydrator\CloneObjectMap;
 use SocialConnect\Common\Hydrator;
@@ -25,6 +26,13 @@ class Client extends \SocialConnect\Common\ClientAbstract
     protected $apiUri = self::API_BASE_URI;
 
     /**
+     * Latest response
+     *
+     * @var Response|null
+     */
+    protected $response;
+
+    /**
      * @param string $accessToken
      */
     public function setAccessToken($accessToken)
@@ -40,7 +48,7 @@ class Client extends \SocialConnect\Common\ClientAbstract
      */
     public function request($uri, array $parameters = array(), $method = AbstractHttpClient::GET)
     {
-        $response = $this->httpClient->request($this->apiUri . $uri, $parameters, $method);
+        $this->response = $response = $this->httpClient->request($this->apiUri . $uri, $parameters, $method);
         if ($response) {
             if ($response->isServerError()) {
                 $body = $response->getBody();
