@@ -12,9 +12,9 @@ Available methods:
 | API          | Methods                                                                                        | Documentation      | Specification tests |
 |--------------|------------------------------------------------------------------------------------------------|--------------------|---------------------|
 | Repositories |                                                                                                | 0/15 :x:           |                     |
-|              | [getRepositories](https://developer.github.com/v3/repos/#list-your-repositories)               | :heavy_check_mark: | :heavy_check_mark:  |
-|              | [getUserRepositories](https://developer.github.com/v3/users/#get-the-authenticated-user)       | :heavy_check_mark: | :heavy_check_mark:  |
-|              | [getOrgRepositories](https://developer.github.com/v3/users/#update-the-authenticated-user)     | :heavy_check_mark: | :heavy_check_mark:  |
+|              | [getRepositories](https://developer.github.com/v3/repos/#list-your-repositories)               | :x:                | :x:                 |
+|              | [getUserRepositories](https://developer.github.com/v3/users/#get-the-authenticated-user)       | :x:                | :x:                 |
+|              | [getOrgRepositories](https://developer.github.com/v3/users/#update-the-authenticated-user)     | :x:                | :x:                 |
 | Users        |                                                                                                | 2/4 :x:            |                     |
 |              | [getUser](https://developer.github.com/v3/users/#get-a-single-user)                            | :heavy_check_mark: | :heavy_check_mark:  |
 |              | [getSelf](https://developer.github.com/v3/users/#get-the-authenticated-user)                   | :x:                | :x:                 |
