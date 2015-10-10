@@ -6,7 +6,7 @@
 
 namespace SocialConnect\GitHub\Exception;
 
-class ApiLimitExceed extends \RuntimeException
+class ApiLimitExceed extends RuntimeException
 {
     public function __construct($limit = 5000, $code = 0, $previous = null)
     {
