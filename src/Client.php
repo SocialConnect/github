@@ -53,10 +53,10 @@ class Client extends \SocialConnect\Common\ClientAbstract
             if ($response->isServerError()) {
                 $body = $response->getBody();
                 if ($body) {
-                    throw new \Exception($body);
+                    throw new Exception($body);
                 }
 
-                throw new \Exception('Unexpected server error with code : ' . $response->getStatusCode());
+                throw new Exception('Unexpected server error with code : ' . $response->getStatusCode());
             }
 
             if ($response->getHeader('X-RateLimit-Remaining') == 0) {
@@ -68,16 +68,17 @@ class Client extends \SocialConnect\Common\ClientAbstract
                 $json = json_decode($body);
 
                 if (isset($json->message)) {
-                    throw new \Exception($json->message, $response->getStatusCode());
+                    throw new Exception($json->message, $response->getStatusCode());
                 } elseif ($json) {
                     return $json;
                 }
 
-                throw new \Exception($response->getBody());
+                throw new Exception($response->getBody());
             } else {
-                throw new \Exception($response->getBody());
+                throw new Exception($response->getBody());
             }
         }
+        
         return false;
     }
 
