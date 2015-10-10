@@ -11,6 +11,7 @@ use SocialConnect\Common\Http\Client\Client as AbstractHttpClient;
 use SocialConnect\Common\HttpClient;
 use SocialConnect\Common\Hydrator\CloneObjectMap;
 use SocialConnect\Common\Hydrator;
+use SocialConnect\GitHub\Exception\ApiLimitExceed;
 
 class Client extends \SocialConnect\Common\ClientAbstract
 {
@@ -48,6 +49,10 @@ class Client extends \SocialConnect\Common\ClientAbstract
                 }
 
                 throw new \Exception('Unexpected server error with code : ' . $response->getStatusCode());
+            }
+
+            if ($response->getHeader('X-RateLimit-Remaining') == 0) {
+                throw new ApiLimitExceed($response->getHeader('X-RateLimit-Limit'));
             }
 
             $body = $response->getBody();
